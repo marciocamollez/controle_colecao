@@ -1,0 +1,45 @@
+<div class="content p-1">
+    <div class="list-group-item">
+        <div class="d-flex">
+            <div class="mr-auto p-2">
+                <h2 class="display-4 titulo">Editar Categoria de Camisa</h2>
+            </div>
+            <div class="p-2">
+                <span class="d-none d-md-block">
+                    <a href="/camisas/categoria-camisas" class="btn btn-outline-info btn-sm">Listar</a>
+                    <a href="/camisas/visualizar-categoria-camisa/{{categoriacamisa._id}}" class="btn btn-outline-primary btn-sm">Visualizar</a>
+                    <a href="/camisas/deletar-categoria-camisa/{{categoriacamisa._id}}" class="btn btn-outline-danger btn-sm" data-confirm="Tem certeza de que deseja excluir o item o selecionando">Apagar</a>
+                </span>
+                <div class="dropdown d-block d-md-none">
+                    <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ações
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
+                        <a class="dropdown-item" href="/camisas/categoria-camisas">Listar</a>
+                        <a class="dropdown-item" href="/camisas/visualizar-categoria-camisa/{{categoriacamisa._id}}">Visualizar</a>
+                        <a class="dropdown-item" href="/camisas/deletar-categoria-camisa/{{categoriacamisa._id}}"
+                            data-toggle="modal" data-target="#apagarRegistro" data-confirm="Tem certeza de que deseja excluir o item o selecionando">Apagar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{>_msg}}
+        <hr>
+        <form action="/camisas/update-categoria-camisa" method="POST">
+            <input type="hidden" name="_id" value="{{categoriacamisa._id}}">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label><span class="text-danger">*</span> Nome</label>
+                    <input name="nome" type="text" class="form-control" id="nome"
+                        placeholder="Nome da categoria de camisa" value="{{categoriacamisa.nome}}">
+                </div>
+            </div>
+
+            <p>
+                <span class="text-danger">* </span>Campo obrigatório
+            </p>
+            <button type="submit" class="btn btn-warning">Salvar</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="content p-1">
+    <div class="list-group-item">
+        <div class="d-flex">
+            <div class="mr-auto p-2">
+                <h2 class="display-4 titulo">Visualizar Categoria Camisa</h2>
+            </div>
+            <div class="p-2">
+                <span class="d-none d-md-block">
+                    <a href="/camisas/categoria-camisas" class="btn btn-outline-info btn-sm">Listar</a>
+                    <a href="/camisas/editar-categoria-camisa/{{categoriacamisa._id}}" class="btn btn-outline-warning btn-sm">Editar</a>
+                    <a href="/camisas/deletar-categora-camisa/{{categoriacamisa._id}}" class="btn btn-outline-danger btn-sm" data-confirm="Tem certeza de que deseja excluir o item o selecionando">Apagar</a>
+                </span>
+                <div class="dropdown d-block d-md-none">
+                    <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ações
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
+                        <a class="dropdown-item" href="/camisas/categoria-camisas">Listar</a>
+                        <a class="dropdown-item" href="/camisas/editar-categoria-camisa/{{categoriacamisa._id}}">Editar</a>
+                        <a class="dropdown-item" href="/admin/deletar-categoria-camisa/{{categoriacamisa._id}}" data-confirm="Tem certeza de que deseja excluir o item o selecionando">Apagar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        {{>_msg}}
+        <dl class="row">
+            <dt class="col-sm-3">ID</dt>
+            <dd class="col-sm-9">{{categoriacamisa._id}}</dd>
+
+            <dt class="col-sm-3">Nome</dt>
+            <dd class="col-sm-9">{{categoriacamisa.nome}}</dd>
+
+        </dl>
+    </div>
+</div>

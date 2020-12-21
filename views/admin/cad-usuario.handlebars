@@ -1,0 +1,36 @@
+{{>_msg}}
+<form action="/admin/add-usuario" method="POST">
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label><span class="text-danger">*</span> Nome</label>
+            <input name="nome" type="text" class="form-control" id="nome" placeholder="Nome completo" value="{{usuario.nome}}" required>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label><span class="text-danger">*</span> E-mail</label>
+            <input name="email" type="email" class="form-control" id="email" placeholder="O melhor e-mail" value="{{usuario.email}}" required>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label><span class="text-danger">*</span> Senha</label>
+            <input name="senha" type="password" class="form-control" id="senha" placeholder="Senha com minimo 6 caracteres" value="{{usuario.senha}}" required>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label><span class="text-danger">*</span> Repetir a Senha</label>
+            <input name="rep_senha" type="password" class="form-control" id="rep_senha" placeholder="Digite novamente a senha" value="{{usuario.rep_senha}}" required>
+        </div>
+    </div>
+
+    <p>
+        <span class="text-danger">* </span>Campo obrigatório
+    </p>
+    <button type="submit" class="btn btn-success">Cadastrar</button>
+</form>
+ 

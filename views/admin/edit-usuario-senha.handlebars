@@ -1,0 +1,52 @@
+<div class="content p-1">
+    <div class="list-group-item">
+        <div class="d-flex">
+            <div class="mr-auto p-2">
+                <h2 class="display-4 titulo">Editar Senha</h2>
+            </div>
+            <div class="p-2">
+                <span class="d-none d-md-block">
+                    <a href="/admin/usuarios" class="btn btn-outline-info btn-sm">Listar</a>
+                    <a href="/admin/vis-usuario/{{usuario._id}}" class="btn btn-outline-primary btn-sm">Visualizar</a>
+                    <a href="/admin/del-usuario/{{usuario._id}}" class="btn btn-outline-danger btn-sm"
+                        data-confirm="Tem certeza de que deseja excluir o item o selecionando">Apagar</a>
+                </span>
+                <div class="dropdown d-block d-md-none">
+                    <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ações
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
+                        <a class="dropdown-item" href="/admin/usuarios">Listar</a>
+                        <a class="dropdown-item" href="/admin/vis-usuario/{{usuario._id}}">Visualizar</a>
+                        <a class="dropdown-item" href="/admin/del-usuario/{{usuario._id}}"
+                            data-confirm="Tem certeza de que deseja excluir o item o selecionando">Apagar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{>_msg}}
+        <hr>
+        <form action="/admin/update-usuario-senha" method="POST">
+            <input name="_id" type="hidden" value="{{dados_usuario._id}}">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label><span class="text-danger">*</span> Senha</label>
+                    <input name="senha" type="password" class="form-control" id="senha" placeholder="Senha com minimo 6 caracteres" value="{{dados_usuario.senha}}" >
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label><span class="text-danger">*</span> Repetir a Senha</label>
+                    <input name="rep_senha" type="password" class="form-control" id="rep_senha" placeholder="Digite novamente a senha" value="{{dados_usuario.rep_senha}}" >
+                </div>
+            </div>
+
+            <p>
+                <span class="text-danger">* </span>Campo obrigatório
+            </p>
+            <button type="submit" class="btn btn-warning">Salvar</button>
+        </form>
+    </div>
+</div>

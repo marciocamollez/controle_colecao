@@ -1,0 +1,13 @@
+<form method="POST" action="/admin/login">
+    <h1>Área Restrita</h1>
+    {{>_msg}}
+    <div class="form-group">
+        <label>Usuário</label>
+        <input type="text" name="email" class="form-control" placeholder="Digite o usuário">
+    </div>
+    <div class="form-group">
+        <label>Senha</label>
+        <input type="password" name="senha" class="form-control" placeholder="Digite a senha">
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Acessar</button>
+</form>

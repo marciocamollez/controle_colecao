@@ -1,0 +1,42 @@
+<div class="content p-1">
+    <div class="list-group-item">
+        <div class="d-flex">
+            <div class="mr-auto p-2">
+                <h2 class="display-4 titulo">Visualizar Usuário</h2>
+            </div>
+            <div class="p-2">
+                <span class="d-none d-md-block">
+                    <a href="/admin/usuarios" class="btn btn-outline-info btn-sm">Listar</a>
+                    <a href="/admin/edit-usuario/{{usuario._id}}" class="btn btn-outline-warning btn-sm">Editar</a>
+                    <a href="/admin/edit-usuario-senha/{{usuario._id}}" class="btn btn-outline-warning btn-sm">Editar Senha</a>
+                    <a href="/admin/del-usuario/{{usuario._id}}" class="btn btn-outline-danger btn-sm" data-confirm="Tem certeza de que deseja excluir o item o selecionando">Apagar</a>
+                </span>
+                <div class="dropdown d-block d-md-none">
+                    <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ações
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
+                        <a class="dropdown-item" href="/admin/usuarios">Listar</a>
+                        <a class="dropdown-item" href="/admin/edit-usuario/{{usuario._id}}">Editar</a>
+                        <a class="dropdown-item" href="/admin/edit-usuario-senha/{{usuario._id}}">Editar Senha</a>
+                        <a class="dropdown-item" href="/admin/del-usuario/{{usuario._id}}" data-confirm="Tem certeza de que deseja excluir o item o selecionando">Apagar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        {{>_msg}}
+        <dl class="row">
+            <dt class="col-sm-3">ID</dt>
+            <dd class="col-sm-9">{{usuario._id}}</dd>
+
+            <dt class="col-sm-3">Nome</dt>
+            <dd class="col-sm-9">{{usuario.nome}}</dd>
+
+            <dt class="col-sm-3">E-mail</dt>
+            <dd class="col-sm-9">{{usuario.email}}</dd>
+
+        </dl>
+    </div>
+</div>
