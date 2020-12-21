@@ -1,0 +1,59 @@
+<div class="content p-1">
+    <div class="list-group-item">
+        <div class="d-flex">
+            <div class="mr-auto p-2">
+                <h2 class="display-4 titulo">Visualizar Camisa</h2>
+            </div>
+            <div class="p-2">
+                <span class="d-none d-md-block">
+                    <a href="/camisas/lista-camisas" class="btn btn-outline-info btn-sm">Listar</a>
+                    <a href="/camisas/editar-camisa/{{camisa._id}}" class="btn btn-outline-warning btn-sm">Editar</a>
+                    <a href="/camisas/deletar-camisa/{{camisa._id}}" class="btn btn-outline-danger btn-sm" data-confirm="Tem certeza de que deseja excluir o item o selecionando">Apagar</a>
+                </span>
+                <div class="dropdown d-block d-md-none">
+                    <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ações
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
+                        <a class="dropdown-item" href="/camisas/lista-camisas">Listar</a>
+                        <a class="dropdown-item" href="/camisas/editar-camisa/{{camisa._id}}">Editar</a>
+                        <a class="dropdown-item" href="/camisas/deletar-camisa/{{camisa._id}}" data-confirm="Tem certeza de que deseja excluir o item o selecionando">Apagar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        {{>_msg}}
+        <dl class="row">
+            <dt class="col-sm-3">ID</dt>
+            <dd class="col-sm-9">{{camisa._id}}</dd>
+
+            <dt class="col-sm-3">Nome do Time</dt>
+            <dd class="col-sm-9">{{camisa.nome_do_time}}</dd>
+
+            <dt class="col-sm-3">Ano</dt>
+            <dd class="col-sm-9">{{camisa.ano}}</dd>
+
+            <dt class="col-sm-3">Cor</dt>
+            <dd class="col-sm-9">{{camisa.cor}}</dd>
+
+            <dt class="col-sm-3">Fornecedor</dt>
+            <dd class="col-sm-9">{{camisa.fornecedor}}</dd>
+
+            <dt class="col-sm-3">Patrocinador</dt>
+            <dd class="col-sm-9">{{camisa.patrocinador}}</dd>
+
+            <dt class="col-sm-3">Categoria</dt>
+            <dd class="col-sm-9">
+                <a href="/camisas/visualizar-categoria-camisa/{{camisa.categoriacamisa._id}}">
+                    {{camisa.categoriacamisa.nome}}
+                </a>
+            </dd>
+
+            <dt class="col-sm-3">Imagem</dt>
+            <dd class="col-sm-9"><img src="{{fileName}}" class="img-responsive" /></dd>
+
+        </dl>
+    </div>
+</div>

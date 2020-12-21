@@ -1,0 +1,79 @@
+<div class="content p-1">
+    <div class="list-group-item">
+        <div class="d-flex">
+            <div class="mr-auto p-2">
+                <h2 class="display-4 titulo">Cadastrar Camisa</h2>
+            </div>
+            <div class="p-2">
+                <a href="/camisas/lista-camisas">
+                    <button class="btn btn-outline-info btn-sm">
+                        Listar
+                    </button>
+                </a>
+            </div>
+        </div>
+        {{>_msg}}
+        <hr>
+        <form action="/camisas/add-camisa" method="POST">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label><span class="text-danger">*</span> Nome do Time</label>
+                    <input name="nome_do_time" type="text" class="form-control" id="nome_do_time" placeholder="Nome do time" value="{{camisa.nome_do_time}}">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label><span class="text-danger">*</span> Ano</label>
+                    <input name="ano" type="text" class="form-control" id="ano" placeholder="Ano" value="{{camisa.ano}}">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label><span class="text-danger">*</span> Cor</label>
+                    <input name="cor" type="text" class="form-control" id="cor" placeholder="Cor" value="{{camisa.cor}}">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label><span class="text-danger">*</span> Fornecedor</label>
+                    <input name="fornecedor" type="text" class="form-control" id="fornecedor" placeholder="Fornecedor" value="{{camisa.fornecedor}}">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label><span class="text-danger">*</span> Patrocinador</label>
+                    <input name="patrocinador" type="text" class="form-control" id="patrocinador" placeholder="Patrocinador" value="{{camisa.patrocinador}}">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label>Categoria da Camisa</label>
+                    <select name="categoriacamisa" id="categoriacamisa" class="form-control">
+                        {{#each categoriacamisa}}
+                            <option value="{{_id}}">{{nome}}</option>
+                        {{else}}
+                            <option value="">Nenhuma Categoria encontrada</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+
+            <!--<div class="form-row">
+                <div class="form-group col-md-12">
+                    <label>Imagem da Camisa (JPG)</label>
+                    <input name="fileName" type="file" class="form-control" id="fileName">
+                </div>
+            </div>-->
+
+            <p>
+                <span class="text-danger">* </span>Campo obrigatório
+            </p>
+            <button type="submit" class="btn btn-success">Cadastrar</button>
+        </form>
+    </div>
+</div>

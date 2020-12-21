@@ -28,6 +28,9 @@ const Camisa = new Schema({
         ref: "categoriacamisa",
         required: true
     },
+    /*fileName: {
+        type: String
+    },*/
     created: {
         type: Date,
         default: Date.now()
