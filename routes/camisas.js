@@ -261,13 +261,15 @@ router.get('/editar-camisa/:id', eAdmin, (req, res) => {
 })
 
 /* Atualizar Camisa. Aqui tem que incluir o upload */
-router.post('/update-camisa', (req, res) => {
+router.post('/update-camisa', uploadCamisa.single('file'), (req, res, next) => {
     Camisa.findOne({_id: req.body.id}).then((camisa) =>{
         camisa.nome_do_time = req.body.nome_do_time,
         camisa.ano = req.body.ano,
         camisa.cor = req.body.cor,
         camisa.fornecedor = req.body.fornecedor,
         camisa.patrocinador = req.body.patrocinador,
+        camisa.filename = req.file.filename,
+        camisa.path = req.file.path,
         camisa.categoriacamisa = req.body.categoriacamisa
 
         camisa.save().then(() => {

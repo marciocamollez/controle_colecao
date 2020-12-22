@@ -25,7 +25,7 @@
         </div>
         {{>_msg}}
         <hr>
-        <form action="/camisas/update-camisa" method="POST">
+        <form action="/camisas/update-camisa" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="id" value="{{camisa._id}}" />
             <div class="form-row">
                 <div class="form-group col-md-12">
@@ -78,7 +78,7 @@
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label>Imagem da Camisa (JPG)</label>
-                    <input name="file" type="file" class="form-control" id="file" required>
+                    <input name="file" type="file" class="form-control" id="file">
                 </div>
             </div>
 
