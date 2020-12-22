@@ -14,7 +14,7 @@
         </div>
         {{>_msg}}
         <hr>
-        <form action="/camisas/add-camisa" method="POST">
+        <form action="/camisas/add-camisa" method="POST" enctype="multipart/form-data">
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label><span class="text-danger">*</span> Nome do Time</label>
@@ -63,12 +63,12 @@
                 </div>
             </div>
 
-            <!--<div class="form-row">
+            <div class="form-row">
                 <div class="form-group col-md-12">
                     <label>Imagem da Camisa (JPG)</label>
-                    <input name="fileName" type="file" class="form-control" id="fileName">
+                    <input name="file" type="file" class="form-control" id="file" required>
                 </div>
-            </div>-->
+            </div>
 
             <p>
                 <span class="text-danger">* </span>Campo obrigatório

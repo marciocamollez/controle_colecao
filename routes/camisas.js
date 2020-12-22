@@ -131,7 +131,7 @@ router.get('/deletar-categoria-camisa/:id', eAdmin, (req, res) => {
 /* Acessar página camisas */
 router.get('/lista-camisas', eAdmin, (req, res) => {
     const { page = 1 } = req.query
-    Camisa.paginate({}, { page, limit: 2, populate: "categoriacamisa" }).then((camisa) => {
+    Camisa.paginate({}, { page, limit: 10, populate: "categoriacamisa" }).then((camisa) => {
         res.render("camisas/lista-camisas", { camisa: camisa })
     }).catch((erro) => {
         req.flash("error_msg", "Error: Camisas não encontradadas!")
@@ -160,12 +160,37 @@ router.get('/cadastrar-camisa', eAdmin, (req, res) => {
     })
 })
 
-/* Adicionar Camisa específica - Aqui precisa entrar o upload */
+/* Adicionar Camisa específica */
+
+const storageCamisa = multer.diskStorage({
+    destination: function(req, file, cb){
+        cb(null, "public/uploads")
+    },
+    filename: function(req, file, cb){
+        var originalname = file.originalname;
+        var extension = originalname.split(".");
+        filename = Date.now() + '.' + extension[extension.length-1];
+        cb(null, filename);
+    }
+    
+})
+const uploadCamisa = multer({ 
+    storage: storageCamisa,
+    fileFilter: (req, file, cb) => {
+        if(file.mimetype == "image/jpg" || file.mimetype == "image/jpeg"){
+            cb(null, true)
+        }else{
+            cb(null, false)
+        }
+    }
+})
 
 
+router.post('/add-camisa', eAdmin, uploadCamisa.single('file'), (req, res, next) => {
+
+    
 
 
-router.post('/add-camisa', eAdmin, (req, res) => {
     var dados_camisa = req.body
     var errors = []
     if (!req.body.nome_do_time || typeof req.body.nome_do_time == undefined || req.body.nome_do_time == null) {
@@ -186,9 +211,7 @@ router.post('/add-camisa', eAdmin, (req, res) => {
     if (!req.body.categoriacamisa || typeof req.body.categoriacamisa == undefined || req.body.categoriacamisa == null) {
         errors.push({ error: "Necessário preencher o campo Categoria Camisa" })
     }
-    /*if (!req.body.fileName || typeof req.body.fileName == undefined || req.body.fileName == null) {
-        errors.push({ error: "Necessário preencher o campo Upload" })
-    }*/
+    
 
     if (errors.length > 0) {
         CategoriaCamisa.find().then((categoriacamisa) => {
@@ -202,8 +225,10 @@ router.post('/add-camisa', eAdmin, (req, res) => {
             cor: req.body.cor,
             fornecedor: req.body.fornecedor,
             patrocinador: req.body.patrocinador,
+            filename: req.file.filename,
+            path: req.file.path,
             categoriacamisa: req.body.categoriacamisa
-            /*fileName: req.body.fileName*/
+            
         }
         new Camisa(addCamisa).save().then(() => {
             req.flash("success_msg", "Camisa cadastrada com sucesso!")
