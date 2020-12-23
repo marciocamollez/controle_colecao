@@ -6,15 +6,29 @@ const bcryptjs = require('bcryptjs')
 require("../models/Usuario")
 const Usuario = mongoose.model('usuario')
 
+/*require("../models/Camisa")
+const Camisa = mongoose.model('camisa')*/
+
 const passport = require('passport')
 const { eAdmin } = require("../helpers/eAdmin")
 
 
 
 /* Página inicial admin */
-router.get('/', (req, res) => {
+router.get('/', eAdmin, (req, res) => {
     res.render("admin/index")
 })
+
+/*router.get('/',  eAdmin, (req,res) => {
+    Camisa.countDocuments({}, function( err, count){
+        res.render("admin/index")
+        console.log( "Numero de Cadastros:", count );
+    }).catch((erro) => {
+        res.send("Nenhuma informação encontrada entre em contato com o administrador!")
+    })    
+    
+})*/
+
 
 /* Página do Login  */
 router.get('/login', (req, res) => {

@@ -140,6 +140,17 @@ router.get('/lista-camisas', eAdmin, (req, res) => {
 
 })
 
+/* Exemplo: Contagem total das camisas
+Camisa.countDocuments({}, function( err, count){
+    console.log( "Number of users:", count );
+})*/
+
+/* Exemplo: Cor verde das camisas
+Camisa.countDocuments({cor: "Verde"}, function( err, count){
+    console.log( "Number of users:", count );
+})*/
+
+
 /* Visualizar Camisa específica */
 router.get('/visualizar-camisa/:id', eAdmin, (req, res) => {
     Camisa.findOne({ _id: req.params.id }).populate("categoriacamisa").then((camisa) => {

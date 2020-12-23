@@ -31,23 +31,23 @@
                 <tbody>
                     {{#each camisa.docs}}
                     <tr>
-                        <td>{{nome_do_time}}</td>
-                        <td>{{ano}}</td>
-                        <td>{{cor}}</td>
-                        <td>{{fornecedor}}</td>
-                        <td>{{patrocinador}}</td>
-                        <td>
+                        <td class="align-middle">{{nome_do_time}}</td>
+                        <td class="align-middle">{{ano}}</td>
+                        <td class="align-middle">{{cor}}</td>
+                        <td class="align-middle">{{fornecedor}}</td>
+                        <td class="align-middle">{{patrocinador}}</td>
+                        <td class="align-middle">
                             <a href="/camisas/visualizar-categoria-camisa/{{categoriacamisa._id}}">
                                 {{categoriacamisa.nome}}
                             </a>
                         </td>
                         <td><img src="http://localhost:8080/uploads/{{filename}}" class="img-fluid" width="200" /></td>
-                        <td class="text-center">
+                        <td class="align-middle">
                             <span class="d-none d-md-block">
                                 <a href="/camisas/visualizar-camisa/{{_id}}"
-                                    class="btn btn-outline-primary btn-sm">Visualizar</a>
+                                    class="btn btn-outline-primary btn-sm">Visualizar</a><br /><br />
                                 <a href="/camisas/editar-camisa/{{_id}}"
-                                    class="btn btn-outline-warning btn-sm">Editar</a>
+                                    class="btn btn-outline-warning btn-sm">Editar</a><br /><br />
                                 <a href="/camisas/deletar-camisa/{{_id}}" class="btn btn-outline-danger btn-sm" data-confirm="Tem certeza de que deseja excluir o item o selecionando">Apagar</a>
                             </span>
                             <div class="dropdown d-block d-md-none">
