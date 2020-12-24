@@ -26,7 +26,7 @@ const { eAdmin } = require("../helpers/eAdmin")
 /* Acessar categoria de camisas */
 router.get('/categoria-camisas', eAdmin, (req, res) => {
     const { page = 1 } = req.query
-    CategoriaCamisa.paginate({}, { page, limit: 2 }).then((categoriacamisa) => {
+    CategoriaCamisa.paginate({}, { page, limit: 10 }).then((categoriacamisa) => {
         res.render("camisas/categoria-camisas", { categoriacamisa: categoriacamisa })
     }).catch((erro) => {
         req.flash("error_msg", "Error: Categoria de camisa não encontrado!")

@@ -15,19 +15,19 @@
                 <form method="POST" action="/contato/add-contato">
                     <div class="form-group">
                         <label>Nome</label>
-                        <input type="text" name="nome" class="form-control" placeholder="Nome completo" value="{{contato.nome}}">
+                        <input type="text" name="nome" class="form-control" placeholder="Nome completo" value="{{contato.nome}}" required>
                     </div>
                     <div class="form-group">
                         <label>E-mail</label>
-                        <input type="email" name="email" class="form-control" placeholder="Seu Melhor E-mail" value="{{contato.email}}">
+                        <input type="email" name="email" class="form-control" placeholder="Seu Melhor E-mail" value="{{contato.email}}" required>
                     </div>
                     <div class="form-group">
                         <label>Assunto</label>
-                        <input type="text" name="assunto" class="form-control" placeholder="Assunto da mensagem" value="{{contato.assunto}}">
+                        <input type="text" name="assunto" class="form-control" placeholder="Assunto da mensagem" value="{{contato.assunto}}" required>
                     </div>
                     <div class="form-group">
                         <label>Mensagem</label>
-                        <textarea class="form-control" name="mensagem" rows="6" value="{{contato.mensagem}}"></textarea>
+                        <textarea class="form-control" name="mensagem" rows="6" value="{{contato.mensagem}}" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-danger">Enviar</button>
                 </form>

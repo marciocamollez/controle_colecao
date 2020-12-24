@@ -16,14 +16,17 @@
 
         <div class="card-deck">
             <div class="card text-center card-um">
+                <div class="row">
+                 {{#each camisa}}
                 
-                 {{#each camisa.docs}}
-                <div class="card-body col-3">
-                    <h5 class="card-title">{{camisa.nome_do_time}}</h5>
-                    <p class="card-text lead">Ano da Camisa: {{camisa.ano}}</p>
-                    <img src="http://localhost:8080/uploads/{{filename}}" class="img-fluid" />
-                </div>
+                    <div class="card-body col-12 col-lg-3 col-md-4">
+                        <h5 class="card-title">{{nome_do_time}}</h5>
+                        <p class="card-text lead">Ano da Camisa: {{ano}}</p>
+                        <img src="http://localhost:8080/uploads/{{filename}}" class="img-fluid" />
+                    </div>
+                
                 {{/each}}
+                </div>
 
             </div>
             

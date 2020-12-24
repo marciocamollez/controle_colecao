@@ -13,6 +13,9 @@ const HomePage = mongoose.model('homepage')
 require("../models/Camisa")
 const Camisa = mongoose.model('camisa')
 
+require("../models/CategoriaCamisa")
+const CategoriaCamisa = mongoose.model('categoriacamisa')
+
 const passport = require('passport')
 const { eAdmin } = require("../helpers/eAdmin")
 
@@ -21,7 +24,7 @@ const { eAdmin } = require("../helpers/eAdmin")
 /* Página inicial admin */
 router.get('/', (req,res) => {
     HomePage.findOne({}).then((homepage) => {
-        Camisa.findOne({}).then((camisa) => {
+        Camisa.find({}).then((camisa) => {
             res.render("home/home", {layout: "home-site.handlebars", homepage: homepage, camisa: camisa})
         }).catch((erro) => {
             res.send("Nenhuma informação encontrada entre em contato com o administrador!")
@@ -31,6 +34,7 @@ router.get('/', (req,res) => {
     })
     
 })
+
 
 
 /* Form para editar a home */
