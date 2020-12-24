@@ -1,0 +1,75 @@
+<div class="content p-1">
+    <div class="list-group-item">
+        <div class="d-flex">
+            <div class="mr-auto p-2">
+                <h2 class="display-4 titulo">Editar Home</h2>
+            </div>
+            <div class="p-2">
+                <span class="d-none d-md-block">
+                    <a href="/edit-home-img" class="btn btn-outline-primary btn-sm">Editar Imagem</a>
+                </span>
+                <div class="dropdown d-block d-md-none">
+                    <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ações
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
+                        <a class="dropdown-item" href="/edit-home-img">Editar Imagem</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{>_msg}}
+        <hr>
+        <form method="POST" action="/update-home">
+            <input name="_id" type="hidden" value="{{homepage._id}}">
+
+            <div class="form-group">
+                <label>Título da Página</label>
+                <input name="titulo" type="text" class="form-control" id="titulo" placeholder="Título da Página" value="{{homepage.titulo}}">
+            </div>
+            <div class="form-group">
+                <label>Subtítulo da Página</label>
+                <input name="subtitulo" type="text" class="form-control" id="subtitulo"
+                    placeholder="Subtítulo da Página" value="{{homepage.subtitulo}}">
+            </div>
+            <div class="form-group">
+                <label>Título CTA da Página</label>
+                <input name="titulobtn" type="text" class="form-control" id="titulobtn"
+                    placeholder="Título CTA da Página" value="{{homepage.titulobtn}}">
+            </div>
+            <div class="form-group">
+                <label>Link CTA da Página</label>
+                <input name="urlbtn" type="text" class="form-control" id="urlbtn"
+                    placeholder="Link CTA do Topo" value="{{homepage.urlbtn}}">
+            </div>
+            <div class="form-group">
+                <label>Título da Seção 2</label>
+                <input name="titulo_camisa" type="text" class="form-control" id="titulo_camisa"
+                    placeholder="Título da Seção 2" value="{{homepage.titulo_camisa}}">
+            </div>
+            <div class="form-group">
+                <label>URL Instagram</label>
+                <input name="url_insta" type="text" class="form-control" id="url_insta"
+                    placeholder="URL Instagram" value="{{homepage.url_insta}}">
+            </div>
+            <div class="form-group">
+                <label>URL Face</label>
+                <input name="url_face" type="text" class="form-control" id="url_face"
+                    placeholder="URL Face" value="{{homepage.url_face}}">
+            </div>
+            <div class="form-group">
+                <label>URL Linkedin</label>
+                <input name="url_linkedin" type="text" class="form-control" id="url_linkedin"
+                    placeholder="URL Linkedin" value="{{homepage.url_linkedin}}">
+            </div>
+            <div class="form-group">
+                <label>URL Git Hub</label>
+                <input name="url_git" type="text" class="form-control" id="url_git"
+                    placeholder="URL Git Hub" value="{{homepage.url_git}}">
+            </div>
+                  
+            <button type="submit" class="btn btn-warning">Salvar</button>
+        </form>
+    </div>
+</div>

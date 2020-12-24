@@ -1,0 +1,125 @@
+body {
+    padding-top: 3.9rem;
+}
+
+nav {
+    background-color: #00532e;
+    line-height: 1.6 !important;
+}
+
+nav ul li.menu a {
+    font-size: 1.2rem !important;
+    color: #FFF !important;
+}
+
+nav ul li.menu a:hover {
+    color: #e2dede !important;
+}
+
+.logo {
+    width: 120px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.descr-top {
+    background-image: url("/images/home-top.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0rem;
+    margin-bottom: 0rem;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    color: #FFF;
+}
+
+.servicos {
+    background-color: #f9faff;
+    border-radius: 0rem;
+    margin-bottom: 0rem;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.video {
+    background-image: url("/images/video_home/fundo-video.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0rem;
+    margin-bottom: 0rem;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #FFF;
+}
+
+.exp-home {
+    background-color: #f9faff;
+    border-radius: 0rem;
+    margin-bottom: 0rem;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.exp-home-titulo {
+    color: #313451;
+}
+
+.rodape {
+    background-color: #00532e;
+    color: #FFF;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.rodape ul li a.link-rodape {
+    color: #FFF !important;
+}
+
+.rodape ul li a.link-rodape:hover {
+    color: #adaeaf !important;
+    text-decoration: none;
+}
+
+.sobre {
+    background-color: #f9faff;
+    border-radius: 0rem;
+    margin-bottom: 0rem;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.descr-top-sobre {
+    background-image: url("../images/topo_sobre/descr-top-sobre.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0rem;
+    margin-bottom: 0rem;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    color: #FFF;
+}
+
+.descr-top-contato {
+    background-image: url("../images/home-top.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0rem;
+    margin-bottom: 0rem;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    color: #FFF;
+}
+
+.sobre-titulo {
+    color: #e61239;
+}
+
+.contato {
+    background-color: #F9FAFF;
+    border-radius: 0rem;
+    margin-bottom: 0rem;
+}

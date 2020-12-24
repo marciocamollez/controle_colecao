@@ -11,6 +11,9 @@ require("./config/auth")(passport)
 
 const admin = require("./routes/admin") //Pagina do login
 const camisas = require("./routes/camisas") //Pagina de camisas
+const homepage = require("./routes/home") //Pagina Home
+const add_bd = require("./routes/add_bd") //Adicionar ao BD
+const contato = require("./routes/contato") //Página Contato
 
 //Sessão
 app.use(session({
@@ -60,8 +63,11 @@ app.use(express.static(path.join(__dirname, "public")))
 
 
 //Rotas
+app.use('/', homepage)
 app.use('/admin', admin)
 app.use('/camisas', camisas)
+app.use('/add_bd', add_bd)
+app.use('/contato', contato)
 
 //Iniciar o servidor
 const PORT = 8080;

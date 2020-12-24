@@ -1,0 +1,21 @@
+<div class="content p-1">
+    <div class="list-group-item">
+        <div class="d-flex">
+            <div class="mr-auto p-2">
+                <h2 class="display-4 titulo">Editar Imagem da página Home</h2>
+            </div>
+        </div>
+        {{>_msg}}
+        <hr>
+        <form method="POST" action="/update-home-img" enctype="multipart/form-data">
+            <input name="_id" type="hidden" value="{{hometopo._id}}">
+
+            <div class="form-group">
+                <label>Imagem do Topo (1890px x 1080px, jpg)</label>
+                <input name="file" type="file" class="form-control" id="file">
+            </div>
+                  
+            <button type="submit" class="btn btn-warning">Salvar</button>
+        </form>
+    </div>
+</div>

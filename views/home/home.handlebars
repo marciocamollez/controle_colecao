@@ -1,0 +1,35 @@
+{{>_menusite}}
+
+    
+<div class="jumbotron descr-top">
+    <div class="container text-center">
+        <h1>{{homepage.titulo}}</h1>
+        <p class="lead mb-4">{{homepage.subtitulo}}</p>
+        <a class="btn btn-lg btn-outline-light" href="{{homepage.urlbtn}}" role="button">{{homepage.titulobtn}}</a>
+    </div>
+</div>
+
+
+<div class="jumbotron servicos" id="camisas">
+    <div class="container">
+        <h2 class="display-4 text-center" style="margin-bottom: 40px;">{{homepage.titulo_camisa}}</h2>
+
+        <div class="card-deck">
+            <div class="card text-center card-um">
+                
+                 {{#each camisa.docs}}
+                <div class="card-body col-3">
+                    <h5 class="card-title">{{camisa.nome_do_time}}</h5>
+                    <p class="card-text lead">Ano da Camisa: {{camisa.ano}}</p>
+                    <img src="http://localhost:8080/uploads/{{filename}}" class="img-fluid" />
+                </div>
+                {{/each}}
+
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+{{>_rodapesite}}
+
